@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    }
+body {
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+h5 {
+    margin-bottom: 5px;}
+
+.modal {
+    width: 350px;
+    padding: 10px;
+    }
+
+input[type="text"] {
+    width: 100%;
+    padding: 2px 5px;
+    }
+
+input[type="range"] {
+    width: 100%;
+    }
+
+.block + .block {
+    margin-top: 10px;
+    }
+
+.subtitle {
+    font-size: 10px;
+    color: #777;
+    margin-bottom: 3px;
+    }
+
+.copy {
+    font-size: 18px;
+    line-height: 44px;
+    padding: 0 15px;
+    background: #79be00;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="popup.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<head>
+</head>
+<body>
+<div class="modal">
+    <div class="block">
+        <h5>Ссылка на фон</h5>
+        <input type="text" placeholder="https://cdn.riastatic.com/docs/pictures..."/>
+    </div>
+    <div class="block">
+        <h5>Ссылка на фон 2</h5>
+        <div class="subtitle">При пустом поле медиа-запрос не вставляется</div>
+        <input type="text" placeholder="https://cdn.riastatic.com/docs/pictures..."/>
+    </div>
+    <div class="block">
+        <h5>Разрешение медиа-запроса</h5>
+        <input type="number" value="1380"/>
+    </div>
+    <div class="block">
+        <input type="checkbox" id="fix" checked/>
+        <label for="fix">Закрепить фон</label>
+    </div>
+    <div class="block">
+        <h5>Отступ сверху: <span id="num">0</span> px</h5>
+        <input type="range" id="range" min="-100" step="1" max="200" value="0"/>
+    </div>
+    <div class="block">
+        <h5>Рекламная ссылка</h5>
+        <input type="text" placeholder="link.."/>
+    </div>
+    <div class="block">
+        <h5>Ссылка на счётчик</h5>
+        <div class="subtitle">При пустом поле счётчик не вставляется</div>
+        <input type="text" placeholder="src='*********'"/>
+    </div>
+    <div class="block">
+        <div class="copy">Скопировать код</div>
+    </div>
+</div>
+</body>
+<script src="index.js"></script>
+</html>
