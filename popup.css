@@ -44,6 +44,6 @@ input[type="range"] {
     cursor: pointer;
     }
 
-#media-query {
+#media-query, #range2-wrap {
     display: none;
     }

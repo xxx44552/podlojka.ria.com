@@ -13,21 +13,30 @@
         <input id="bg-1" type="text" placeholder="https://cdn.riastatic.com/docs/pictures..."/>
     </div>
     <div class="block">
+        <h5>Отступ сверху: <span id="num1">0</span> px</h5>
+        <input type="range" id="range1" min="-100" step="1" max="200" value="0"/>
+    </div>
+    <div class="block">
         <h5>Ссылка на фон 2</h5>
         <div class="subtitle">При пустом поле медиа-запрос не вставляется</div>
         <input id="bg-2" type="text" placeholder="https://cdn.riastatic.com/docs/pictures..."/>
     </div>
+    <div class="block" id="range2-wrap">
+        <h5>Отступ сверху: <span id="num2">0</span> px</h5>
+        <input type="range" id="range2" min="-100" step="1" max="200" value="0"/>
+    </div>
     <div class="block" id="media-query">
         <h5>Разрешение медиа-запроса</h5>
-        <input type="number" value="1380"/>
+        <input type="number" id="media-number" value="1380"/>
     </div>
     <div class="block">
         <input type="checkbox" id="fix" checked/>
         <label for="fix">Закрепить фон</label>
     </div>
     <div class="block">
-        <h5>Отступ сверху: <span id="num">0</span> px</h5>
-        <input type="range" id="range" min="-100" step="1" max="200" value="0"/>
+        <input type="color" id="color" value="#ffffff"/>
+        <label for="color">Фоновый цвет: <span id="color-value">none</span></label>
+        <button id="bg-none">none</button>
     </div>
     <div class="block">
         <h5>Рекламная ссылка</h5>
@@ -37,6 +46,12 @@
         <h5>Ссылка на счётчик</h5>
         <div class="subtitle">При пустом поле счётчик не вставляется</div>
         <input type="text" id="counter" placeholder="src='*********'"/>
+    </div>
+    <div class="block">
+        <div class="subtitle">*Применить - при обновлении станицы или при переходе на другую вкладку</div>
+        <button id="clear">Очистить</button>
+        <button id="start">Применить</button>
+
     </div>
     <div class="block">
         <div class="copy" id="copy">Скопировать код</div>
