@@ -19,7 +19,11 @@ let fix = document.getElementById('fix');
 
 chrome.storage.local.get(['fixValue'], function(result) {
   if(result.fixValue) {
-    fixValue === '1' ? fix.checked = true : fix.checked = false;
+    if(result.fixValue === 'true') {
+      fix.checked = true
+    }else {
+      fix.checked = false;
+    }
   }
 });
 
@@ -32,7 +36,7 @@ chrome.storage.local.get(['mt1'], function(result) {
 
 chrome.storage.local.get(['bgColor'], function(result) {
   if(result.bgColor) {
-    colorValue.innerHTML = result.bgColor;
+    colorValue.innerHTML = 'none';
     color.value = result.bgColor;
   }
 });
@@ -72,7 +76,7 @@ function show() {
   const fixedBg = fix.checked ? `background-attachment: fixed !important;` : '';
   const img = counter.value ? `<img src="${counter.value}" style="position:fixed;visibility:hidden;" />` : '';
   const media =  bg2.value === '' ? '' :`@media (max-width: ${mediaNumber.value}px){body{background: ${color.value === '#ffffff' ? '' : color.value} url("${bg2.value}")  center ${range2.value}px no-repeat !important;${fixedBg}}}`;
-  const style = `<style type="text/css">@media (min-width: 769px){body.modal-open, body.modal-open .fixed-branding{background-position: calc(50% - 8px) 0 !important;}html{}body{background: ${color.value === '#ffffff' ? '' : color.value} url("${bg1.value}")  center ${range1.value}px no-repeat !important;${fixedBg}} ${media} header{position: relative; z-index: 3; margin-bottom: 0}header + .container{background-color: #fff; padding: 0 10px 20px; z-index: 5; position: relative}header + .container .explore-search{margin-top: 0}footer{position: relative; z-index: 3 !important}.app-header{z-index: inherit}.app-head{position: relative; z-index: 6 !important}.panel-banner > div{margin-top: 0}nav.head-menu{height: 37px}.panel-banner{display: block !important; width: 100% !important; margin: 0 auto !important; padding: 0 !important}.fixed-banner-view, #adriver_banner{display: none}.fixed-branding{position: fixed; z-index: 1; margin: 0 !important; top: 0; overflow: hidden; left: 0; width: 50%; height: 100%; right: auto;}.fixed-branding.right{left: auto; right:0;}.branding_bmw_x{border: 0 none; position: absolute; top: 0; right: 0; z-index: 1; width: 100%; height: 100%}.container-body > .container, .container-main, .app-content, .container-header{position: relative; z-index: 3; padding-left: 10px; padding-right: 10px; background: #fff}.container-body > .container-header{padding: 0 !important;}.container-body > .container-main{padding-left: 10px !important; padding-right: 10px !important;}.fixed-addthis, .fixed-addthis .addthis_toolbox{display: none}.container{padding: 0}.container-header{padding: 16px 10px 14px !important; border: 0 none}.app-content{margin-top: 0}.app-header{box-shadow: none !important}.carousel-control.next::before, .showcase-main-offer .next{right: 0; border-radius: 5px 0 0 5px}.carousel-control.prev::before, .showcase-main-offer .prev{left: 0; border-radius: 0 5px 5px 0}.carousel-control.next::before, .showcase-main-offer .next{right: 0; border-radius: 5px 0 0 5px;}.carousel-control.prev::before, .showcase-main-offer .prev{left: 0; border-radius: 0 5px 5px 0;}.bannercode{display: none;}.feedback{display: none}.banner_plase_960px{width: 100%; margin: 0;}.container-footer{position: relative; z-index: 3;}}</style> <div class="fixed-branding"><a href="${linkPrefix + link.value}" target="_blank" class="branding_bmw_x"></a></div><div class="fixed-branding right"><a href="${linkPrefix + link.value}" target="_blank" class="branding_bmw_x"></a></div><a href="${linkPrefix + link.value}" target="_blank" class="banner_bmw"></a> ${img}`;
+  const style = `<style type="text/css">@media (min-width: 769px){body.modal-open, body.modal-open .fixed-branding{background-position: calc(50% - 8px) 0 !important;}html{}body{background: ${color.value === '#ffffff' ? '' : color.value} url("${bg1.value}")  center ${range1.value}px no-repeat !important;${fixedBg}} ${media} header{position: relative; z-index: 3; margin-bottom: 0}header + .container{background-color: #fff; padding: 0 10px 20px; z-index: 5; position: relative}header + .container .explore-search{margin-top: 0}footer{position: relative; z-index: 3 !important}.app-header{z-index: inherit}.app-head{position: relative; z-index: 6 !important}.panel-banner > div{margin-top: 0}nav.head-menu{height: 37px}.panel-banner{display: block !important; width: 100% !important; margin: 0 auto !important; padding: 0 !important}.fixed-banner-view, #adriver_banner{display: none}.fixed-branding{position: fixed; z-index: 1; margin: 0 !important; top: 0; overflow: hidden; left: 0; width: 50%; height: 100%; right: auto;}.fixed-branding.right{left: auto; right:0;}.branding_bmw_x{border: 0 none; position: absolute; top: 0; right: 0; z-index: 1; width: 100%; height: 100%}.container-body > .container, .container-main, .app-content, .container-header{position: relative; z-index: 3; padding-left: 10px; padding-right: 10px; background: #fff}.container-body > .container-header{padding: 0 !important;}.container-body > .container-main{padding-left: 10px !important; padding-right: 10px !important;}.fixed-addthis, .fixed-addthis .addthis_toolbox{display: none}.container-header{padding: 15px 10px 14px !important; border: 0 none}.app-content{margin-top: 0}.app-header{box-shadow: none !important}.carousel-control.next::before, .showcase-main-offer .next{right: 0; border-radius: 5px 0 0 5px}.carousel-control.prev::before, .showcase-main-offer .prev{left: 0; border-radius: 0 5px 5px 0}.carousel-control.next::before, .showcase-main-offer .next{right: 0; border-radius: 5px 0 0 5px;}.carousel-control.prev::before, .showcase-main-offer .prev{left: 0; border-radius: 0 5px 5px 0;}.bannercode{display: none;}.feedback{display: none}.banner_plase_960px{width: 100%; margin: 0;}.container-footer{position: relative; z-index: 3;}}</style> <div class="fixed-branding"><a href="${linkPrefix + link.value}" target="_blank" class="branding_bmw_x"></a></div><div class="fixed-branding right"><a href="${linkPrefix + link.value}" target="_blank" class="branding_bmw_x"></a></div><a href="${linkPrefix + link.value}" target="_blank" class="banner_bmw"></a> ${img}`;
   return `document.getElementById("div728x90head").innerHTML = '${style}'`
 }
 
@@ -84,12 +88,13 @@ bg2.addEventListener('input', function () {
 
 
 fix.addEventListener('change', function () {
+
   if(fix.checked === true) {
-    chrome.storage.local.set({fixValue: '1'}, function() {
+    chrome.storage.local.set({fixValue: 'true'}, function() {
       console.log('Value is set to ' + '1');
     });
   }else {
-    chrome.storage.local.set({fixValue: ''}, function() {
+    chrome.storage.local.set({fixValue: 'false'}, function() {
       console.log('Value is set to ' + '');
     });
   }
@@ -236,10 +241,20 @@ start.addEventListener('click', function () {
 });
 
 copy.addEventListener('click', function () {
-  console.log(bg1.value)
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    chrome.tabs.executeScript(
-        tabs[0].id,
-        {code: show()});
-  });
+  linkPrefix = '%%CLICK_URL_UNESC%%';
+  const script = '<script> <!--\n\nvar brandStyles =\''+show().replace('document.getElementById("div728x90head").innerHTML = \'', '').replace(/.$/,"")+'\';\nvar head=window.top.document.getElementById("div728x90head");\nif (head ) {head.innerHTML=brandStyles; }\n\n//-->\n</script>';
+  navigator.clipboard.writeText(script)
+      .then(() => {
+        copy.innerHTML = 'Скопировано!';
+        setTimeout(() => {
+          copy.innerHTML = 'Скопировать код';
+        }, 3000)
+      })
+      .catch(err => {
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+          chrome.tabs.executeScript(
+              tabs[0].id,
+              {code: `alert(${err})`});
+        });
+      });
 })
